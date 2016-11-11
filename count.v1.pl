@@ -6,7 +6,7 @@ my $start_run = time();
 
 
 unless ($#ARGV == 2) { 
-	die "Usage: Run as $0 <top n results> <k-mer legnth>\n";
+	die "Usage: Run as $0 <sequence> <top n results> <k-mer legnth>\n";
 }
 
 # Set in.txt, number of hits to show and k-mer length
@@ -14,7 +14,7 @@ my $sequence = $ARGV[0];
 my $top_freqs = ($ARGV[1] - 1); # - 1 for array later 
 my $k_length = $ARGV[2];
 
-my $in = sysread $sequence or die $!;
+open my $in, '<', $sequence or die $!;
 
 # Read file as string
 my $nucs = <$in>; 
