@@ -6,6 +6,7 @@ Given a text file containing a sequence of letters from the alphabet {A, C, G, T
 The program should be callable like this:
 
 `count input.txt 25 20`  
+
 In this example, it would process the file `input.txt` and extract the top `25 k-mers` of length `20`. It should print the output to standard out in comma-separated format, something like this:
 
 ```
